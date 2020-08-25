@@ -42,6 +42,9 @@ bindkey -a '^V' edit-command-line
 bindkey '^?' backward-delete-char
 bindkey '^H' backward-delete-char
 
+# make del work!
+bindkey "\e[3~" delete-char
+
 # Use incremental search
 bindkey "^R" history-incremental-search-backward
 
