@@ -126,7 +126,7 @@ EOF
 # ' at ' in orange outputted only if both user and host enabled
 function RPR_AT() {
     if [[ "${RPR_SHOW_USER}" == "true" ]] && [[ "${RPR_SHOW_HOST}" == "true" ]]; then
-        echo "%{$fg[blue]%} at %{$reset_color%}"
+        echo "%{$fg[orange]%} @ %{$reset_color%}"
     fi
 }
 
