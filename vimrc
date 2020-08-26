@@ -1,5 +1,3 @@
-set nocompatible " not vi compatible
-
 "------------------
 " Syntax and indent
 "------------------
@@ -25,15 +23,17 @@ elseif &t_Co < 256
 else
     set background=dark
     let g:solarized_termcolors=256 " instead of 16 color with mapping in terminal
-    colorscheme solarized
+    colorscheme solarized 
     " customized colors
     highlight SignColumn ctermbg=234
-    highlight StatusLine cterm=bold ctermfg=245 ctermbg=235
+    highlight StatusLine cterm=bold ctermfg=245 ctermbg=232
     highlight StatusLineNC cterm=bold ctermfg=245 ctermbg=235
     let g:lightline = {'colorscheme': 'dark'}
     highlight SpellBad cterm=underline
     " patches
-    highlight CursorLineNr cterm=NONE
+    highlight CursorLineNR cterm=NONE
+    highlight Normal ctermbg=232
+    highlight CursorLine ctermbg=233
 endif
 
 filetype plugin indent on " enable file type detection

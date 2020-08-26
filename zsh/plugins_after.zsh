@@ -30,6 +30,17 @@ if [[ "$(tput colors)" == "256" ]]; then
     ZSH_HIGHLIGHT_STYLES[assign]=fg=037
 fi
 
+
+# Use history substring search
+source ~/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+# bind UP and DOWN arrow keys to history substring search
+zmodload zsh/terminfo
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
+bindkey '^[[A' history-substring-search-up			
+bindkey '^[[B' history-substring-search-down
+
+
 # dircolors
 
 if [[ "$(tput colors)" == "256" ]]; then
@@ -38,12 +49,10 @@ fi
 
 # autosuggestions
 source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=104'
+bindkey '^[^M' autosuggest-execute
+bindkey '^\ ' autosuggest-accept
 
-bindkey '^ ' autosuggest-accept
-bindkey '^\r' autosuggest-execute
-
-# history-substring-search
-source ~/.zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 
 
