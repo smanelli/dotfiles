@@ -1,5 +1,5 @@
 # External plugins (initialized after)
-
+operatingSystem=$(uname -s)
 # Syntax highlighting
 
 source ~/.zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -42,10 +42,11 @@ bindkey '^[[B' history-substring-search-down
 
 
 # dircolors
-
-if [[ "$(tput colors)" == "256" ]]; then
-    eval $(dircolors =(cat ~/.shell/plugins/dircolors-solarized/dircolors.256dark ~/.shell/dircolors.extra))
-fi
+if [ "$operatingSystem" != "Darwin" ]; then 
+    if [[ "$(tput colors)" == "256" ]]; then
+        eval $(dircolors =(cat ~/.shell/plugins/dircolors-solarized/dircolors.256dark ~/.shell/dircolors.extra))
+    fi
+fi    
 
 # autosuggestions
 source ~/.zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
