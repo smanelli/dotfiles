@@ -1,10 +1,11 @@
-operatingSystem=$(uname -s)
+#operatingSystem=$(uname -s)
 # Use colors in coreutils utilities output
-if [ "$operatingSystem" = "Darwin" ]; then
-    alias ls='ls -G'
-else    
-    alias ls='ls --color=auto'
-fi    
+#if [ "$operatingSystem" = "Darwin" ]; then
+#    alias ls='ls -G'
+#else    
+#    alias ls='ls --color=auto'
+#fi 
+ alias ls='ls --color=auto'
 alias grep='grep --color'
 
 # ls aliases
