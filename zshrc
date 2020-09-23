@@ -1,6 +1,11 @@
 # Functions
 source ~/.shell/functions.sh
 
+function prev() {
+  PREV=$(fc -lrn | head -n 1)
+  sh -c "pet new `printf %q "$PREV"`"
+}
+
 # Allow local customizations in the ~/.shell_local_before file
 if [ -f ~/.shell_local_before ]; then
     source ~/.shell_local_before
